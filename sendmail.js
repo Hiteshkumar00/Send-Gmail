@@ -16,12 +16,16 @@ const transporter = nodemailer.createTransport({
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main(send_to, sub, msg, files) {
+
+  let inst = "If anyone sent you any harmfull message. ignore it and throw Gmail account in spam. this web's purpose help to those person who can not login their email account";
   // send mail with defined transport object
   const info = await transporter.sendMail({
     from: `"Send Mail Website 👻" <${from}>`, // sender address
     to: send_to, // list of receivers
     subject: sub, // Subject line
-    text: msg, // plain text body
+    text: info,
+    html: `<p>${msg}</p>`,
+     // plain text body
     attachments: files
   });
 

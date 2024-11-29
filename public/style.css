@@ -3,7 +3,29 @@ h2{
 }
 
 
-
 .center{
   text-align: center;
+}
+
+#loader{
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(255, 255, 255, 0.8);
+}
+
+.con-loader{
+  margin-top: 40vh;
+  text-align: center;
+  color: blue;
+  display: inline-block;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

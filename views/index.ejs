@@ -10,18 +10,14 @@
   <title>Send Mail</title>
 </head>
 <body>
-  <div class="container row">
+  <div class="row">
     <div class="col offset-sm-3 col-sm-6">
-      <%if(message){ %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Success!</strong> Sent on <%= message %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <%} %>
-
       <h2 class="mb-3 mt-3" style="color: #2869e2;">Send Mail <i class="fa-regular fa-envelope" style="color: #2869e2;"></i></h2>
-  
-    <form action="/send" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+    
+      <%if(message){ %>
+        <p class="text-success center">message has successfully sent...</p>
+      <%} %>
+    <form action="/send" id="send-form" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
       <div class="mb-3">
         <label for="email" class="form-label">To : </label>
         <input type="email" name="to" class="form-control" placeholder="name@example.com" required>
@@ -46,6 +42,38 @@
       </div>
       
     </form>
+
+    <div id="loader" style="display: none;">
+      <div class="con-loader">
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Sending Mail, please wait...</p>
+      </div> 
+    </div>
+
+
     </div>
   </div>
   

@@ -27,9 +27,22 @@ function addInputFile(){
       if (!form.checkValidity()) {
         event.preventDefault()
         event.stopPropagation()
+      }else{
+        const loader = document.getElementById('loader');
+        loader.style.display = 'block';
       }
 
       form.classList.add('was-validated')
     }, false)
   })
 })();
+
+
+// const form = document.getElementById('send-form');
+
+
+// form.addEventListener('submit', () => {
+//   // Show the loader
+  
+// });
+

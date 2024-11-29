@@ -31,7 +31,6 @@ app.get("/mail", (req, res) => {
 });
 
 app.post("/send", upload.array('data', 10), async (req, res) => {
-
   let data = req.files;
   data.forEach((f, i) => {data[i] = {filename: f.originalname, path : f.path}});
   await send(req.body.to, req.body.sub, req.body.msg, data).catch((err) => console.log(err));

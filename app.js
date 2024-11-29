@@ -29,6 +29,10 @@ app.post("/send", upload.array('data', 10), async (req, res) => {
   res.redirect("/mail");
 });
 
+app.use("*", (req, res)=>{
+  res.redirect("/mail");
+});
+
 
 app.listen(8080, ()=>{
   console.log("app is listening to port 8080");

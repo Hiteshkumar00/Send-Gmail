@@ -36,13 +36,3 @@ function addInputFile(){
     }, false)
   })
 })();
-
-
-// const form = document.getElementById('send-form');
-
-
-// form.addEventListener('submit', () => {
-//   // Show the loader
-  
-// });
-

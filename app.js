@@ -6,11 +6,14 @@ const fs = require('fs');
 const session = require('express-session');
 const flash = require('connect-flash');
 
+const ejsMate = require('ejs-mate');
+
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.set("view engine", "ejs");
-
+app.engine("ejs", ejsMate);
 app.use(session({
   secret: 'notUsefull',
   resave: false,
